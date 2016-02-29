@@ -1,0 +1,4 @@
+#!/bin/awk -f
+BEGIN {total=0; print "Begin to calculate salary:"}
+{total += $4; if (total > 0 && NF>0) printf "%s's salary=%d\n", $2,$4;}
+END {print "Total salary=%d",total}

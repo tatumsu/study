@@ -1,0 +1,5 @@
+#!/bin/sh
+
+version=classic
+echo "current pid: $$"
+PS1="classic> "

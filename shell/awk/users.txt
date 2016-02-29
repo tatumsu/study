@@ -1,0 +1,7 @@
+ID	NAME		AGE	SALARY	EMAIL
+1	tatum		35	24000	tatum.su@augmentum.com
+2	aaron		31	25000	aaron.zhang@microsoft.com
+3	jasmine		29	18000	jasmine.xie@augmentum.com.cn	
+4	magnolia	28	9000	magnolia.dong@nippon.com
+5	kaden		32	26000	kaden.fan@augmentum.com
+

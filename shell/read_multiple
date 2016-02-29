@@ -1,0 +1,5 @@
+read -p "input number a: " a
+read -p "input number b: " b
+echo "a=$a, b=$b, a*b=$((a*b))"
+
+

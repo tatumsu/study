@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            Simple document
+        </title>    
+    </head>
+    <body>
+        <div id="user_list">
+            All the user:
+            <p>tatum</p> 
+            <p>aaron</p>
+            <p>kaden</p>
+        </div>
+
+        <div id="email_list">
+
+            <p>tatum.su@163.com</p>
+
+            <p>aaronzhung@microsoft.com</p>
+            <p>kaden.fan@augmentum.com</p>
+        </div>
+    </body>
+    <script>
+        var divUsers = document.getElementById("user_list");
+        // childNodes contains the text node
+        // children contains only the node
+        // user = divUsers.childNodes[0].childNodes[0].nodeValue;
+        var node = divUsers.childNodes[1]
+        alert("NodeName: " + node.nodeName + "; NodeType: " + node.nodeType)
+    </script>
+</html

@@ -1,0 +1,82 @@
+ecently someone asked me for a GPG or PGP public key so that they could send some sensitive material to me by email. I understood what they meant, but inwardly I groaned because I've just never had any reason to use public key encryption, and had no idea how to create the key or decrypt what would be sent back to me. Looking at "man bgp" on my Linux box didn't make me feel any better, and a Google search for gpg docs didn't immediately turn up anything that wasn't techno gobbledy-dee-geek. Eventually (after I had figured out the basics by trial and error), I did find GNU Privacy Guard HandBook, which probably would have gotten me up to speed a little faster, but which still was more than I needed to know at the moment. This, therefore, is a quick introduction so that you don't have to get a headache from the man page as I did. After learning what is presented here, you can visit the GNU page for more in depth coverage.
+
+Public key, private key
+The basic concept is this: You generate a pair of matched keys. One of these is referred to as your "Public" key, and the other as "Private". You give the Public key to anyone who asks for it; you can even publish it on your web site. You keep your Private key secret, locked up on your own computer. A document (a text or binary file) can be encrypted using either key, and is decrypted with the other. The choice of which key to use to encrypt depends upon your purpose.
+
+For example, if you want to send me something, you'd encrypt it using my public key. No one else can decrypt it; only my private key will work. On the other hand, I might be concerned that it really is you sending me a message. In that case, you'd encrypt your message using your private key (this is called "signing"). If I can decrypt it with your public key (presumably I somehow obtained that key and trust that it really is yours), I know that the message really came from you.
+
+
+An example
+You can test this all out on one computer using two (or more) user accounts. I'm going to assume that user "tom" wants to send an encrypted message to user "marge". The first thing Marge needs to do is generate her keys:
+
+[marge@apl marge]$ gpg --gen-key
+gpg (GnuPG) 1.0.6; Copyright (C) 2001 Free Software Foundation, Inc.
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under certain conditions. See the file COPYING for details.
+
+gpg: Warning: using insecure memory!
+gpg: /home/marge/.gnupg: directory created
+gpg: /home/marge/.gnupg/options: new options file created
+gpg: you have to start GnuPG again, so it can read the new options file
+ 
+Because Marge has never created a key before, gpg just creates what it needs and tells her to run it again:
+
+[marge@apl marge]$ gpg --gen-key
+gpg (GnuPG) 1.0.6; Copyright (C) 2001 Free Software Foundation, Inc.
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under certain conditions. See the file COPYING for details.
+
+gpg: Warning: using insecure memory!
+gpg: /home/marge/.gnupg/secring.gpg: keyring created
+gpg: /home/marge/.gnupg/pubring.gpg: keyring created
+Please select what kind of key you want:
+   (1) DSA and ElGamal (default)
+   (2) DSA (sign only)
+   (4) ElGamal (sign and encrypt)
+Your selection? 1
+                 DSA keypair will have 1024 bits.
+About to generate a new ELG-E keypair.
+              minimum keysize is  768 bits
+              default keysize is 1024 bits
+    highest suggested keysize is 2048 bits
+What keysize do you want? (1024) 
+Requested keysize is 1024 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 
+Key does not expire at all
+Is this correct (y/n)? y
+                        
+You need a User-ID to identify your key; the software constructs the user id
+from Real Name, Comment and Email Address in this form:
+    "Heinrich Heine (Der Dichter) <heinrichh@duesseldorf.de>"
+
+Real name: Marge
+Email address: marge@aplawrence.com
+Comment: Marge's GPG key pair
+You selected this USER-ID:
+"Marge (Marge's GPG key pair) <marge@aplawrence.com>"
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+You need a Passphrase to protect your secret key.
+
+Enter passphrase: Sbr6wh wscartBM, iscaa2d
+Repeat passphrase: Sbr6wh wscartBM, iscaa2d
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+
+
+Read more: http://aplawrence.com/Basics/gpg.html#ixzz3NUMyfMoQ
+
+
+this is a test
+
+for me

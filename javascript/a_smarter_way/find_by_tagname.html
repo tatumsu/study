@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <h1>Say hello to everybody:</h1>
+        <p>Hello Tatum</p>
+        <p>Hello Aaron</p>
+        <p>Hello Kaden</p>
+        <input type="button" value="Are you OK?" onclick="update_text()"/>
+    </body>
+    <script>
+        function update_text() {
+            var par = document.getElementsByTagName('p');
+            for (var i = 0; i < par.length; i++) {
+                par[i].style.fontFamily = "Verdana, Geneva, sans-serif";
+                if (par[i].innerHTML.indexOf("Hello") >= 0) {
+                    par[i].innerHTML = par[i].innerHTML.replace("Hello", "Are you OK?");
+                } 
+                else {
+                    par[i].innerHTML = par[i].innerHTML.replace("Are you OK?", "Yes, I am OK");
+                }
+
+            }
+        }
+    </script>
+</html>

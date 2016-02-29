@@ -1,0 +1,132 @@
+INFO KEYSPACE
+CONFIG GET DATABASES
+CONFIG GET LOGLEVEL
+
+INCR count
+DECR count
+SET user 'tatum'
+SET age 36
+SET email 'tatum.su@augmentum.com
+
+GET user
+SET user1 'aaron'
+SET user2 'jasmine'
+KEYS user*
+EXISTS user3
+DEL user1 user2
+
+SELECT 1
+SET book 'programming java'
+SET price 85.5
+SET count 102
+
+TYPE count
+LPUSH cities shanghai
+LPUSH cities beijin
+TYPE cities
+
+INCRBY count 20
+DECRBY count 15
+
+INCRBYFLOAT price 2.5
+DECRBYFLOAT PRICE 8.3
+
+APPEND user '.zhang'
+STRLEN user
+
+MSET user aaron.zhang age 32 email aaron.zhang@augmentum.com
+MGET user age email
+
+
+SETBIT flags 31 0
+SETBIT flags 0 1
+SETBIT flags 3 1
+SETBIT flags 7 1
+GET flags
+BITCOUNT flags
+
+SETBIT binding 31 0
+SETBIT binding 3 1
+SETBIT binding 7 0
+# 10010001, 10000000, 00000000, 00000000
+# 00010001, 00000000, 00000000, 0000000
+
+BITOP OR result binding flags
+BITOP AND result binding flags
+BITOP XOR result binding flags
+BITOP NOT result binding flags
+
+HSET user:1 name tatum
+HSET user:1 age 36
+HSET user:1 email tatum.su@augmentum.com
+
+HMSET user:2 name aaron age 32 email aaron.zhang@microsoft.com
+HMGET user:1 name email age
+HGETALL user:2
+HEXISTS user:1 name
+HSETNX user:1 phone 137642387
+HINCRBY user:1 age 1
+HDEL user:1 phone
+HKEYS user:1
+HVALS user:1
+HLEN user:1
+
+LPUSH numbers 1
+LPUSH numbers 2 3 4 5 6
+RPUSH numbers 0 -1 -2 -3 -4 -5 -6
+LLEN numbers
+LRANGE numbers 0 -1
+LPUSH numbers 0 0
+RPUSH numbers 0 0
+LRANGE numbers 0 -1
+LREM numbers 1 0
+LRANGE numbers 0 -1
+LREM numbers -2 0
+LRANGE numbers 0 -1
+LREM numbers 0 0
+
+LINDEX number 5
+LSET numbers 5 0
+LSET numbers 6 0
+LTRIM numbers 4 7
+
+SADD letters a b c d e f g
+SREM letters g
+SMEMBERS
+SISMEMBER letters b
+SISMEMBER letters z
+SADD alphanum a b c 1 2 3
+
+SINTER letters alphanum
+SDIFF letters alphanum
+SUNION letters alphanum
+SCARD letters
+
+SDIFFSTORE set_diff letters alphanum
+SINTERSTORE set_inter letters alphanum
+SUNIONSTORE set_union letters alphanum
+
+SRANDMEMBER letters 3
+SPOP letters
+
+zadd hackers 1940 "Alan Kay"
+zadd hackers 1957 "Sophie Wilson"
+zadd hackers 1953 "Richard Stallman"
+zadd hackers 1949 "Anita Borg"
+zadd hackers 1965 "Yukihiro Matsumoto"
+zadd hackers 1914 "Hedy Lamarr"
+zadd hackers 1916 "Claude Shannon"
+zadd hackers 1969 "Linus Torvalds"
+zadd hackers 1912 "Alan Turing"
+zrange hackers 0 -1
+zrevrange hackers 0 -1
+zrange hackers 0 -1 withscores
+
+zrangebyscore letters 97 102
+zrangebyscore hackers -inf 1950
+
+# pipelining
+# (echo -e "GET user\r\nGET age\r\nGET email\r\n"; sleep 1) | nc localhost 6379 
+
+
+

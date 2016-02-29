@@ -1,0 +1,34 @@
+git init
+git add *.c
+git add README
+git commit -m 'initial project version'
+git commit -a -m "commit skip stage"
+
+git clone git://github.com/tatumsu/study.git
+git clone https://github.com/tatumsu/study.git tatum_git
+git clone git@github.com:tatumsu/study.git
+
+git diff README.md
+git diff --cached README.md
+git diff --staged README.md
+
+git rm test.txt
+git mv test.txt test.data
+git log -p -2 #show last 2 change with diff
+
+
+git reset HEAD test.txt #unstage change
+git checkout -- test.txt # discard unstaged changed
+git log --pretty=oneline # show change hash/comment on oneline
+
+git commit --amend
+
+git remote -v # show all remote repository
+git remote add tatum-study git@github.com:tatumsu/study.git
+git remote rename tatum-study tatum_study
+git remote rm tatum_study
+
+git push origin master
+git remote show origin
+
+Page 35: to be continued

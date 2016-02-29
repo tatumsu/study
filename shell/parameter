@@ -1,0 +1,17 @@
+# $@ expanded as "$1" "$2" "$3" ... "$n"
+# $* expanded as "$1y$2y$3y...$n", where y is the value of $IFS variable i.e. "$*" is one long string and $IFS act as an separator or token delimiters.
+echo "the script file name is: $0"
+echo "total parameter numbers: $#"
+p3=$3
+count=$#
+if [ $count -gt 3 ]
+then
+	echo "----there are more than 3 parmeters"
+fi
+echo "3rd pamaeter is ${p3}"
+IFS=":"
+echo "they are (\$@ version): $@"
+echo "and also they are (\$* version): $*"
+echo "This Shell PID: $$"
+echo "Last background command PID: $!" 
+echo "Shell options: $-"

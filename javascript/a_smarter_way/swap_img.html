@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <img id="btn_img" src="../images/button_before.gif" 
+            onMouseover="switch_pic('btn_img', '../images/button_after.gif')"
+            onMouseout="switch_pic('btn_img', '../images/button_before.gif')"/>
+    </body>
+    <script>
+        function switch_pic(id, img) {
+            document.getElementById(id).src = img;
+        }
+    </script>
+</html>
