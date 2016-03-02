@@ -1,0 +1,77 @@
+body {
+    background-color: #f1f1f1;
+}
+
+h1 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+}
+
+p {
+    color:green;
+    font-family: courier;
+    font-size: 160%;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 30px;
+}
+
+#p01 {
+    color: blue;
+}
+
+p.error {
+    color: red;
+}
+/*----------------------------Link style------------------------------------*/
+a:link    {color:green; background-color:transparent; text-decoration:none}
+a:visited {color:grey; background-color:transparent; text-decoration:none}
+a:hover   {color:red; background-color:transparent; text-decoration:underline}
+a:active  {color:blue; background-color:transparent; text-decoration:underline}
+
+/*----------------------------Table style------------------------------------*/
+table, th, td {
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    border-spacing: 1px;
+}
+
+th, td {
+    padding: 5px;
+    height: 40px;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+/*----------------------------List style------------------------------------*/
+ul#menu {
+    padding: 0;
+    list-style-type:none;
+}
+
+ul#menu li {
+    display: inline;
+}
+
+ul#menu li a {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: underline;;
+    border-radius: 4px 4px 0 0;
+}
+
+ul#menu li a:hover {
+    background-color: orange;
+}

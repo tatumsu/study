@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo HTML with CSS</title>
+    <style>
+      img {
+        width:100%;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>This is a tutorial to demo internal CSS</h1>
+    <p>Style defined by tag type</p>
+    <p>Style defined by tag type</p>
+    <p id="p01">Style defined by ID #</p>
+    <p class="error">Style defined by CSS class</p>
+    <a href="#">www.baidu.com</a>
+    <p>A image link</p>
+    <a href="#"><img src="../images/icons.jpg" style="width:128px;height:128px;"></img></a>
+
+
+    <p>It is better to use the style attribute (instead of the width and height attributes), because it prevents
+    internal or external styles sheets to change the original size of an image:</p>
+
+    <img src="../images/html5.gif" alt="HTML5 Icon" style="float:right;width:128px;height:128px;">
+    <img src="../images/html5.gif" alt="HTML5 Icon" width="128" height="128">
+  </body>
+</html>
