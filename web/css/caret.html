@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <style>
+    .caret {
+      content: '';
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 0px;
+      width: 0px;
+      border-top: 0px solid transparent;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid orange;
+    }
+
+    .right-arrow {
+    	display: inline-block;
+    	position: relative;
+    	background: orange;
+    	padding: 15px;
+    }
+    .right-arrow:after {
+    	content: '';
+    	display: block;
+    	position: absolute;
+    	left: 100%;
+    	top: 50%;
+    	margin-top: -10px;
+    	width: 0;
+    	height: 0;
+    	border-top: 10px solid transparent;
+    	border-right: 10px solid transparent;
+    	border-bottom: 10px solid transparent;
+    	border-left: 10px solid orange;
+    }
+
+    a.up-arrow {
+    	display: inline-block;
+    	position: relative;
+    	background: green;
+    	color: #FFF;
+    	text-decoration: none;
+    	padding: 20px;
+    }
+    a:hover.up-arrow {
+    	background: brown;
+    }
+    a.up-arrow:after {
+    	content: '';
+    	display: block;
+    	position: absolute;
+    	left: 40px;
+    	bottom: 100%;
+    	width: 0;
+    	height: 0;
+    	border-bottom: 10px solid green;
+    	border-top: 10px solid transparent;
+    	border-left: 10px solid transparent;
+    	border-right: 10px solid transparent;
+    }
+    a:hover.up-arrow:after {
+    	border-bottom-color: brown;
+    }
+    </style>
+  </head>
+  <body>
+    <p>Caret:</p>
+    <div class="caret"></div>
+
+    <p>Right Arrow:</p>
+    <div class="right-arrow">Div with Right Arrow</div>
+
+    <p>Up Arrow:</p>
+    <a href="#" class="up-arrow">Button with Up Arrow</a>
+  </body>
+</html>
