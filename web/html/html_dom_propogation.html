@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      #rect {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+    </style>
+    <script>
+      function allowDrop(event) {
+        event.preventDefault();
+      }
+
+      function drag(event) {
+        event.dataTransfer.setData("target_id", event.target.id);
+      }
+
+      function drop(event) {
+        // event.preventDefault();
+        var target_id = event.dataTransfer.getData("target_id");
+        event.target.appendChild(document.getElementById(target_id));
+      }
+
+      function move_img() {
+        img = document.getElementById("img");
+        img_new = img.cloneNode(true);
+        rect = document.getElementById("rect")
+        rect.appendChild(img_new);
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <div>
+      </div>
+    </div>
+  </body>
+</html>
