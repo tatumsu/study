@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML 5 canvas</title>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: white;
+      line-height: 100%;
+      background: #fff;
+      position: relative;
+      height: 100%;
+    }
+    div {
+      height: 20px;
+      width: 100%;
+      background: #356485;
+      margin: 1px;
+      padding: 1px;
+      vertical-align: middle;
+      border-radius: 6px;
+    }
+    </style>
+  </head>
+  <body>
+  
+    <div id="info">
+       Check Web Storage
+    </div>
+    <div id="div_data">
+    </div>
+     <form action="javascript:void();">
+      <input id="txt_user_name" type="text" value="input your name" ></input>
+      <input id="txt_email" type="text" value="input your email "></input>
+      <input type="button" value="Save" onclick="save();"></input>
+      <input type="button" value="Load" onclick="load();"></input>
+    </form>
+    <script>
+      function load() {
+        var div_info = document.getElementById("info");
+        if(typeof(Storage) !== "undefined") {
+         div_info.innerHTML = "Storage is supported";
+        } else {
+           iv_info.innerHTML = "Sorry! No Web Storage support..";
+        }
+        
+        var div_detail = document.getElementById("div_data");
+        var userName = localStorage.getItem("username");
+        var email = localStorage.getItem("email");
+        document.getElementById("txt_user_name").value = userName;
+        document.getElementById("txt_email").value = email;
+
+        div_detail.innerHTML = "UserName=" + userName + "; Email=" + email;
+      }
+
+      function save() {
+        var userName = document.getElementById("txt_user_name").value;
+        var email = document.getElementById("txt_email").value;
+
+        // both form are ok
+        // localStorage.setItem("username", userName);
+        localStorage.username = userName;
+        // localStorage.setItem("email", email);
+        localStorage.email = email;
+
+        // to remove the items form localStorage
+        // localStorage.removeItem("userName");
+      }
+    </script>
+  </body>
+</html>

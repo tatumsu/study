@@ -9,17 +9,18 @@ body {
 	height: 100%;
 }
 
-.headerContainer, .bodyContainer {
+.bodyContainer {
+	border:1px solid gray;
+	border-radius:10px;
 	max-width: 980px;
 	margin: 0 auto;
-	background: #FFF;
+	background: #888;
 }
 
 .padding {
 	padding: 10px 20px;
-}
 
-.bodyContainer { min-height: 500px; }
+}
 
 a.rightArrow {
 	position: relative;
@@ -52,10 +53,6 @@ a:hover.rightArrow:after {
 
 
 
-
-
-
-
 a.leftArrow {
 	position: relative;
 	background: orange;
@@ -84,10 +81,6 @@ a.leftArrow:after {
 a:hover.leftArrow:after {
 	border-right-color: #000;
 }
-
-
-
-
 
 
 

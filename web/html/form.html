@@ -12,6 +12,8 @@
         Last name:<br>
         <!--will not be submit since it has no name assigned-->
         <input type="text" value="su"><br>
+        Email:<br>
+        <input type="email" value="su"><br>
         Sex:<br>
         <input type="radio" name="gender" value="male" checked>
           Male</input><br>
@@ -25,9 +27,31 @@
           <option value="fiat">Fiat</option>
           <option value="audi">Audi</option>
         </select>
+        <textarea name="message" rows="10" cols="30">
+          The cat was playing in the garden.
+        </textarea>
+        <button type="button" onclick="alert('Hello World!')">Click Me!</button>
         <input type="submit" value="Submit">
+        <input list="browsers">
       </form>
-
+      <input list="browsers">
+      <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+      <form action="#" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+      0
+      <input type="range"  id="a" name="a" value="50">
+      100 +
+      <input type="number" id="b" name="b" value="50">
+      =
+      <output name="x" for="a b"></output>
+      <br><br>
+      <input type="submit">
+    </form>
     </div>
   </body>
 </html>

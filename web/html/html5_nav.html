@@ -122,7 +122,7 @@
       <ul>
         <li><a href="#">Home</a></li>
         <li>
-          <a href="#">Products <span class="caret"></span></a>
+          <a href="#" contenteditable="true" accesskey="p" id="product_link" onclick="show_alert(this);">Products <span class="caret"></span></a>
           <div>
             <ul>
               <li><a href="products.html#chair">Chair</a></li>
@@ -135,5 +135,10 @@
         <li><a href="#">Help</a></li>
       </ul>
     </nav>
+    <script type="text/javascript">
+      function show_alert(item) {
+        alert(item.id + " is clicked");
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo HTML Table</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body onload="onload();" onpagehide="onpagehide();" onpageshow="onpageshow();" onunload="onunload();" 
+        onbeforeunload="return onbeforeunload();" onresize="onresize();" >
+    <table style="width:100%">
+      <caption>Monthly savings</caption>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+    </table>
+    <script>
+
+      function onload() {
+        var closeTime = localStorage.lastCloseTime;
+        alert("This page is last unloaded at: " + lastCloseTime);
+      }
+
+      function onpagehide() {
+        alert("onpagehide");
+      }
+
+      function onpageshow() {
+        alert("onpageshow");
+      }
+
+      function onresize() {
+        alert("onresize");
+      }
+
+      function onunload() {
+        var lastCloseTime = new Date();
+        localStorage.lastCloseTime = lastCloseTime.toString();
+      }
+
+      function onbeforeunload() {
+        alert("onbeforeunload");
+        return "Your support is very important to us.";
+      }
+
+
+    </script>
+  </body>
+</html>
