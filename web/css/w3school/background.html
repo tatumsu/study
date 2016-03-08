@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            CSS background
+        </title>
+        <style type="text/css">
+        	/*	
+        		background shorthand order:;
+        		background-color
+				background-image
+				background-repeat
+				background-attachment
+				background-position
+
+				body { backgroun: lightblue url("../../images/pic_mountain.jpg") no-repeat fixed left top; }
+			*/
+            body { 
+            	background-color: lightblue; 
+            	background-image: url("../../images/pic_mountain.jpg");
+            	background-repeat: no-repeat;
+            	background-position: left top;
+            	background-attachment: fixed;
+
+            }
+
+	        h1 {
+			    background-color: green;
+			}
+
+			div {
+			    background-color: lightblue;
+			}
+        </style>
+    </head>
+    <body>
+    	<script type="text/javascript">
+    		var body = document.body;
+    		for (var i = 0; i < 30; i++) {
+    			var paragraph = document.createElement("p");
+    			paragraph.innerHTML = "The background-image is fixed. Try to scroll down the page to line " + i.toString(); 
+    			body.appendChild(paragraph);
+    		}
+    	</script>
+    </body>
+</html>
