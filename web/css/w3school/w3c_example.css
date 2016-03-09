@@ -13,21 +13,40 @@ div.container {
     border: 1px solid #E1E1E1;
 
     width: 1024px;
-    height: 100px;
 
     background-color: #f1f1f1;
 }
 
-.button {
+.button_link {
+    color: black;
     background-color: #4CAF50;
-    border:  0px solid;
-    width: 150px;
-    height: 30px;
-    margin: 10px;
-    color: white;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3); 
+    border: 1px solid green;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: inline-block;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5); 
+    text-decoration: none;
 }
 
-.text {
+.button_link:visited {
+    color: gray;
+}
 
+/*hover must come after a:link and a:visited*/
+.button_link:hover {
+    background-color: #1C8F30;
+    color: white;
+}
+
+/*active MUST come after hover*/
+.button_link:active {
+    color: blue;
+}
+
+ul {
+    list-style-image: url('../../images/list.jpg') ;
+    list-style-position: inside;
 }
