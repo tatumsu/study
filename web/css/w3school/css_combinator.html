@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <style>
+            body {
+                font-family:Verdana,sans-serif;font-size:15px;line-height:1.5
+            }
+            
+            div.container {
+                text-align: center;
+                background-color: rgb(241,241,241);
+                width: 1024px;
+                height: 400px;
+                margin: auto;
+                margin-top: 4px;
+                margin-bottom: 4px;
+                box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5); 
+                left: 0px;
+                position: relative;
+            }
+
+            div > div {
+                background-color: #4CAF50;
+                margin: 10px;
+                height: 50px;
+                width: 200px;
+            }
+
+            div h1 {
+                color: lightblue;
+            }
+
+            div ~ p {
+                color: orange;
+                background-color: lightgray;
+            }
+
+            div + p {
+                color: red;
+                background-color: lightgray;
+            }
+
+
+
+        </style>
+        <link rel="stylesheet" type="text/css" href="css_style_order.css"/>
+    </head>
+    <body>
+        <h1>
+            CSS Combinator
+        </h1>
+        <p>Normal parapraph</p>
+        <div class="container">
+            <h1>H1 inside div</h1>
+            <div> Left Top</div>
+            <div>Hello DIV</div>
+            <p>P1 after div</p>
+            <p>P2 after div</p>
+        </div>    
+        <p>Ajacent paramgraph of div</p> 
+    </body>
+</html>
