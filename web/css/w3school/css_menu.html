@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Menu </title>
+    <link rel="stylesheet" type="text/css" href="css_menu_horizontal.css">
+    <link rel="stylesheet" type="text/css" href="svg.css">
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-family: Verdana, sans-serif;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+
+  
+  
+    <nav>
+      <ul class="menu">
+        <li class="menu_item"><a href="#" class="menu_link" onmousemove="menu_onmousemove(this);"><object type="image/svg+xml" data="../../icons/file.svg" class="menu_item_icon"/></object> File</a>
+          <div class="sub_menu_container">
+            <ul class="sub_menu">
+              <li class="sub_menu_item"><a href="#" class="menu_link">New File</a></li>
+              <li class="sub_menu_item"><a href="#" class="menu_link">Open File...</a></li>
+              <li class="sub_menu_item"><a href="#" class="menu_link">New File</a></li>
+              <hr class="menu_group_seperator">
+              <li class="sub_menu_item"><a href="#" class="menu_link">Save</a></li>
+              <li class="sub_menu_item"><a href="#" class="menu_link">Save As...</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu_item"><a href="#" class="menu_link"><object type="image/svg+xml" data="../../icons/edit.svg" class="menu_item_icon"/></object> Edit</a>
+          <div class="sub_menu_container">
+            <ul class="sub_menu">
+              <li class="sub_menu_item"><a href="#" class="menu_link">Copy</a></li>
+              <li class="sub_menu_item"><a href="#" class="menu_link">Paste</a></li>
+              <hr class="menu_group_seperator">
+              <li class="sub_menu_item"><a href="#" class="menu_link">Undo</a></li>
+              <li class="sub_menu_item"><a href="#" class="menu_link">Redo</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu_item"><a href="#" class="menu_link"><object type="image/svg+xml" data="../../icons/view.svg" class="menu_item_icon"/></object> View</a></li>
+        <li class="menu_item"><a href="#" class="menu_link"><object type="image/svg+xml" data="../../icons/find.svg" class="menu_item_icon"/></object> Find</a></li>
+        <li class="menu_item"><a href="#" class="menu_link"><object type="image/svg+xml" data="../../icons/setting.svg" class="menu_item_icon"/></object> Setting</a></li>
+        <li class="menu_item"><a href="#" class="menu_link"><img src="../../icons/help.svg" class="svg_icon menu_icon"/></object> Help</a></li>
+      </ul>
+    </nav>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      function menu_onmousemove(target) {
+        var svgObj = target.getElementsByTagName("object")[0];
+        svgObj.style.fill = "yellow";
+      }
+
+      /*
+     * Replace all SVG images with inline SVG
+     */
+        jQuery('img.svg_icon').each(function(){
+            var $img = jQuery(this);
+            var imgID = $img.attr('id');
+            var imgClass = $img.attr('class');
+            var imgURL = $img.attr('src');
+
+            jQuery.get(imgURL, function(data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = jQuery(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if(typeof imgID !== 'undefined') {
+                    $svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if(typeof imgClass !== 'undefined') {
+                    $svg = $svg.attr('class', imgClass +' replaced-svg');
+                }
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+
+            }, 'xml');
+
+        });
+    </script>
+  </body>
+</html>
