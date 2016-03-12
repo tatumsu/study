@@ -30,18 +30,11 @@ nav {
   display: block;
 }
 
-.menu_item:hover .menu_group_seperator {
-  display: block;
-}
-
 .menu_item:hover .menu_item_icon {
   background-color: #4CAF50;
-  width: 32px;
-  height: 32px;
-}
-
-.menu_item:hover .menu_icon {
-  fill: red;
+  width: 28px;
+  height: 28px;
+  fill: yellow;
 }
 
 .menu_link {
@@ -64,6 +57,7 @@ nav {
   border: 0;
   padding: 0;
   min-width: 150px;
+  height: auto;
 }
 
 .sub_menu_item {
@@ -71,12 +65,16 @@ nav {
   border: 0;
   padding: 0;
   padding-left: 10px;
-  height: 30px; 
+  height: 40px; 
   display: block;  
 }
 
+.sub_menu_item:hover {
+  border-bottom: 1px dashed yellow;
+}
+
 .menu_group_seperator {
-  display: none;
+  border-bottom: 0.5px dashed lightgray;
 }
 
 .sub_menu_container {
@@ -84,7 +82,7 @@ nav {
   background-color: #4CAF50;
   min-width: 200px;
   display: none;
-  margin-top: -2px;
+  margin-top: 0px;
   margin-left: 0;
   border-top: 0;
   border-radius: 0 0 4px 4px;
@@ -92,9 +90,9 @@ nav {
 }
 
 .menu_item_icon {
-  margin-top: -2px;
   margin-left: 10px;
   margin-right: 10px;
   vertical-align: middle;
   background-color: #222;  
+  fill: green;
 }

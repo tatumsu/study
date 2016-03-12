@@ -3,7 +3,6 @@
   <head>
     <title>CSS Menu </title>
     <link rel="stylesheet" type="text/css" href="css_menu_horizontal.css">
-    <link rel="stylesheet" type="text/css" href="svg.css">
     <style type="text/css">
       body {
         margin: 0;
@@ -12,7 +11,7 @@
         font-family: Verdana, sans-serif;
         font-size: 15px;
       }
-    </style>
+    </style>    
   </head>
   <body>
 
@@ -20,50 +19,41 @@
   
     <nav>
       <ul class="menu">
-        <li class="menu_item"><a href="#" class="menu_link" onmousemove="menu_onmousemove(this);"><object type="image/svg+xml" data="../../icons/file.svg" class="menu_item_icon"/></object> File</a>
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/file.svg" class="svg_icon menu_item_icon"/>  File</a>
           <div class="sub_menu_container">
             <ul class="sub_menu">
               <li class="sub_menu_item"><a href="#" class="menu_link">New File</a></li>
               <li class="sub_menu_item"><a href="#" class="menu_link">Open File...</a></li>
-              <li class="sub_menu_item"><a href="#" class="menu_link">New File</a></li>
-              <hr class="menu_group_seperator">
+              <li class="sub_menu_item menu_group_seperator"><a href="#" class="menu_link">New File</a></li>
               <li class="sub_menu_item"><a href="#" class="menu_link">Save</a></li>
               <li class="sub_menu_item"><a href="#" class="menu_link">Save As...</a></li>
             </ul>
           </div>
         </li>
-        <li class="menu_item"><a href="#" class="menu_link"><object type="image/svg+xml" data="../../icons/edit.svg" class="menu_item_icon"/></object> Edit</a>
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/edit.svg" class="svg_icon menu_item_icon"/>  Edit</a>
           <div class="sub_menu_container">
             <ul class="sub_menu">
               <li class="sub_menu_item"><a href="#" class="menu_link">Copy</a></li>
-              <li class="sub_menu_item"><a href="#" class="menu_link">Paste</a></li>
-              <hr class="menu_group_seperator">
+              <li class="sub_menu_item menu_group_seperator"><a href="#" class="menu_link">Paste</a></li>
               <li class="sub_menu_item"><a href="#" class="menu_link">Undo</a></li>
               <li class="sub_menu_item"><a href="#" class="menu_link">Redo</a></li>
             </ul>
           </div>
         </li>
-        <li class="menu_item"><a href="#" class="menu_link"><object type="image/svg+xml" data="../../icons/view.svg" class="menu_item_icon"/></object> View</a></li>
-        <li class="menu_item"><a href="#" class="menu_link"><object type="image/svg+xml" data="../../icons/find.svg" class="menu_item_icon"/></object> Find</a></li>
-        <li class="menu_item"><a href="#" class="menu_link"><object type="image/svg+xml" data="../../icons/setting.svg" class="menu_item_icon"/></object> Setting</a></li>
-        <li class="menu_item"><a href="#" class="menu_link"><img src="../../icons/help.svg" class="svg_icon menu_icon"/></object> Help</a></li>
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/view.svg" class="svg_icon menu_item_icon"/> View</a></li>
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/find.svg" class="svg_icon menu_item_icon"/> Find</a></li>
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/setting.svg" class="svg_icon menu_item_icon"/> Setting</a></li>
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/help.svg" class="svg_icon menu_item_icon"/> Help</a></li>
       </ul>
     </nav>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript">
-      function menu_onmousemove(target) {
-        var svgObj = target.getElementsByTagName("object")[0];
-        svgObj.style.fill = "yellow";
-      }
-
-      /*
-     * Replace all SVG images with inline SVG
-     */
+      function update_svg_as_inline() {
         jQuery('img.svg_icon').each(function(){
             var $img = jQuery(this);
             var imgID = $img.attr('id');
             var imgClass = $img.attr('class');
-            var imgURL = $img.attr('src');
+            var imgURL = $img.attr('target_svg');
 
             jQuery.get(imgURL, function(data) {
                 // Get the SVG tag, ignore the rest
@@ -75,7 +65,7 @@
                 }
                 // Add replaced image's classes to the new SVG
                 if(typeof imgClass !== 'undefined') {
-                    $svg = $svg.attr('class', imgClass +' replaced-svg');
+                    $svg = $svg.attr('class', imgClass);
                 }
 
                 // Remove any invalid XML tags as per http://validator.w3.org
@@ -87,6 +77,8 @@
             }, 'xml');
 
         });
+      }
+      $( document ).ready( update_svg_as_inline );
     </script>
   </body>
 </html>
