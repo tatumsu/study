@@ -42,7 +42,8 @@ nav {
   color: white;
   text-align: left;  
   line-height: 40px;
-  min-width: 100px;
+  margin: 0 10px;
+  padding: 0;
   text-decoration: none;
   text-shadow: #666 0 1px 1px;
 }
@@ -65,7 +66,6 @@ nav {
   margin: 0;
   border: 0;
   padding: 0;
-  padding-left: 10px;
   height: 40px; 
   display: block;  
 }
@@ -97,8 +97,8 @@ nav {
 }
 
 .menu_item_icon {
-  margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 4px;
   vertical-align: middle;
   background-color: #222;  
   fill: green;
