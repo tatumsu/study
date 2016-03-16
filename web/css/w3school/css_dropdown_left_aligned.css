@@ -16,7 +16,7 @@ div {
 
 .dropdown_content {
   width: 200px;
-  position: absolute;
+  position: absolute; 
   right: 0;
   display: none;
 
