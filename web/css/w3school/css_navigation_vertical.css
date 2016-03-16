@@ -1,0 +1,36 @@
+body {
+	margin: 0px;
+	font-family:Verdana,sans-serif;font-size:15px;line-height:1.5
+}
+
+ul.menu {			
+	margin: 0 10px;
+	padding: 0px;
+	list-style-type: none;
+	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5); 
+	background-color: #444444;
+	width: 200px;
+
+}
+
+li.menu_item a {
+	display: block;
+	padding: 10px 10px;
+	text-decoration: none;
+	color: white;
+	border-bottom: 1px dashed #333333;
+	text-align:center
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li.menu_item a:hover {
+	background-color: #222222;
+}
+
+li.menu_item a.active {
+    background-color: #4CAF50;
+    color: white;
+}

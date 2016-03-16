@@ -1,0 +1,38 @@
+div {
+    text-align: center; 
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.dropdown_container {
+  position: relative;
+  width: 100px;
+  margin: 0;
+  background-color: #4CAF50;
+  height: 40px;
+  line-height: 40px;   
+  z-index: -1;
+  float: right;
+}
+
+.dropdown_content {
+  width: 200px;
+  position: absolute; 
+  right: 0;
+  display: none;
+
+}
+
+.dropdown_container:hover .dropdown_content{
+  display: block;
+}
+
+.dropdown_link {
+  display: block;
+  color: black;
+  background-color: #f9f9f9;
+  text-decoration: none;
+}
+
+.dropdown_link:hover {
+  background-color: lightgray;
+}

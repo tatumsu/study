@@ -22,7 +22,7 @@ nav {
 }
 
 .menu_item:hover {
-  background-color: #4CAF50;
+  background-color: #222;
 }
 
 .menu_item:hover .sub_menu_container {  
@@ -30,9 +30,9 @@ nav {
 }
 
 .menu_item:hover .menu_item_icon {
-  background-color: #4CAF50;
+  background-color: #222;
 
-  fill: yellow;
+  fill: #AA0000;
 }
 
 .menu_link {
@@ -42,14 +42,20 @@ nav {
   line-height: 40px;
   min-width: 6  0px;
   text-decoration: none;
-  text-shadow: #666 0 0px 1px;
   padding: 0 10px;
+  font-weight: bold;
+  font-size: 13px;
 }
 
 .menu_item:hover .menu_link {
-  color: black;
+  color: white;
 }
 
+.menu_item:hover .sub_menu_item .menu_link {
+  color: black;
+  font-weight: bold;
+  font-size: 12px;
+}
 
 .menu_item:last-child {
   float: right;
@@ -68,28 +74,33 @@ nav {
   margin: 0;
   border: 0;
   padding: 0;
-  padding-left: 10px;
   height: 40px; 
   display: block;  
 }
 
 .sub_menu_item:hover {
-  
   background-color: #39577F;
   box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .sub_menu_item:hover .menu_link {
-  color: white;
+  color: black;
+
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: lightgray;
+}
+
+.sub_menu_item:hover .menu_link {
+  color: black;
 }
 
 .menu_group_seperator {
-  border-bottom: 0.5px dashed lightgray;
+  border-bottom: 0.5px solid #A1A1A1;
 }
 
 .sub_menu_container {
   position: absolute;
-  background-color: #4CAF50;
+  background-color: #F1F1F1;
   min-width: 200px;
   display: none;
   margin-top: 0px;
@@ -101,7 +112,7 @@ nav {
 
 .menu_item_icon {
   padding: 0;
-
+  margin-right: 10px;
   vertical-align: middle;
   background-color: #222;  
   fill: red;

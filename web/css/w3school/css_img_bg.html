@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+div {
+    border: 1px solid black;
+    height:150px;
+    width:150px;
+    background:url(../../images/img_flwr.gif); /*224*162*/
+        background-repeat: no-repeat;
+}
+.div1 {
+    background-position: 20px 30px;
+}
+
+
+.div2 {
+    background-size: contain;
+    background-position: 20px 30px;
+}
+
+.div3 {
+    background-size: cover;
+    background-position: 20px 30px;
+    z-index: -1;
+    border: 1;
+}
+
+.div4 {
+    position: fixed;
+    top: calc(454px + 20px);
+    height: calc(162px + 30px);
+    width:224px;
+    z-index: 1;
+    border: 0;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<p>Original image:</p>
+<div class="div1">
+<p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<p>Using the "contain" keyword:</p>
+<div class="div2">
+<p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<p>Using the "cover" keyword:</p>
+<div class="div3" id="div3">
+<p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<div class="div4" id="div4">
+
+</div>
+
+<p>
+<input type="button" value="Toggle" onclick="toggle();" style="position: fixed; bottom: 0">
+
+<script type="text/javascript">
+    function toggle() {
+        var div4 = document.getElementById("div4");
+        var div4 = document.getElementById("div4");
+        if (div4.style.display === "block") {
+            div3.style.display = "block";
+            div4.style.display = "none";
+        }
+        else {
+            div3.style.display = "none";
+            div4.style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>

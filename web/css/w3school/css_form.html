@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <title>
+    Form
+  </title>
+  <head>
+    <style>
+        body {
+            font-family:Verdana,sans-serif;font-size:15px;line-height:1.5
+        }
+        div.container {
+            text-align: center;
+            background-color: rgb(241,241,241);
+            width: 1024px;
+            height: 400px;
+            margin: auto;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5); 
+            left: 0px;
+            position: relative;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+        }
+
+        input[name="user_name"]
+        {
+            background-color: rgba(0, 0, 0, 0);
+            background-repeat: no-repeat, no-repeat;
+            background-position: 50% 100%, 50% calc(-1px + 100%);
+            background-size: 0px 2px, 100% 1px;
+            border: 0 0 0 0;
+            border-bottom-right-radius: 6px;
+            border-bottom-color: rgb(85, 85, 85);
+            background-image: linear-gradient(rgb(95, 95, 95), rgb(95, 95, 95)), linear-gradient(rgb(210, 210, 210), rgb(210, 210, 210))   
+        }
+
+         input[name="search"] {
+            background-image: url("../../images/searchicon.png");
+            vertical-align: middle;
+            background-repeat: no-repeat;
+            background-position: 8px 8px; 
+            padding-left: 40px;
+        }   
+
+    </style>
+  </head>
+  <body>
+    <h1 align="center">Form Component Demostration</h1>
+    <div class="container">
+      <form>
+
+        <label for="username">User Name</label><input type="text" name="user_name" />
+
+      </form>
+    </div>
+  </body>
+</html>
