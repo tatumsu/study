@@ -7,4 +7,6 @@ $test = "aaron";
 $test .= ".zhang";
 echo $test;
 echo "<p>Hello $userName, your emails is: $email.</p>";
+echo "php tmp folder: ";
+echo sys_get_temp_dir();
 ?>
