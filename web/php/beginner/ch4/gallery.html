@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo Image Gallary</title>
+	<style type="text/css">
+		.thumb_container {
+			position: relative;
+		}
+		.thumb {
+			display: inline-block;
+			float: left;
+			margin: autto 0;			
+			margin-left: 50px;
+			vertical-align: middle;
+			box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+			transition: width 2s, height 2s, margin 2s, transform 2s;
+		}
+
+		.thumb img {
+			height: 200px;
+			width: 200px;
+
+			transition: width 2s, height 2s, margin 2s, transform 2s;
+		}
+
+		.overlay {
+			box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+			height: 400px;
+			width: 400px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="thumb_container" id="thumb_container">
+		<div class="thumb"><img src="img/forest.jpg" onclick="toggle(this)"></div>
+		<div class="thumb"><img src="img/mountains.jpg" onclick="toggle(this);"></div>
+		<div class="thumb"><img src="img/lake.jpg" onclick="toggle(this);"></div>
+	</div>
+	<div class="overlay" id="overlay">
+		<img id="big_img" src="">
+	</div>
+	<script type="text/javascript">
+		function toggle(img) {
+			var container = document.getElementById("thumb_container");
+			var images  = document.getElementsByTagName("img");
+
+			var is_big_size = false;
+			if (img.height === 200) {
+				img.style.height = '400px';
+				img.style.width = '400px';
+				is_big_size = true;
+			} else {
+				img.style.height = '200px';
+				img.style.width = '200px';
+			}
+
+			for (var i = images.length - 1; i >= 0; i--) {			
+				if (images[i] != img) {
+					images[i].style.height = '200px';
+					images[i].style.width = '200px';
+					if (is_big_size) {
+						images[i].parentElement.style.marginTop = '100px';
+						images[i].parentElement.style.marginBottom  = '100px';
+					} else {
+						images[i].parentElement.style.marginTop = '0px';
+						images[i].parentElement.style.marginBottom = '0px';
+					}
+				}
+			}
+
+			img.parentElement.style.marginTop = '0px';
+			img.parentElement.style.marginBottom = '0px';
+ 		}
+	</script>
+</body>
+</html>

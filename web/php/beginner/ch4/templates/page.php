@@ -10,6 +10,7 @@ return "
 	</head>
 	<body>
 		$pageData->content
+		$pageData->scriptElements
 	</body>
 </html>";
 

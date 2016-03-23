@@ -6,7 +6,7 @@
 	$pageData = new Page_Data();
 	$pageData->title = "Dynamic image gallery";
 	$pageData->content = include_once "views/navigation.php";
-	
+	$pageData->addScript("js/lightbox.js");
 	$pageData->addCSS('css/layout.css');
 	$pageData->addCSS('css/navigation.css');
 

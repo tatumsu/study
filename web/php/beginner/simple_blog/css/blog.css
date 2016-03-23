@@ -1,0 +1,40 @@
+/* code listing for blog/css/blog.css */
+
+/*styles for blog entry editor*/
+form#editor{
+    width: 625px;
+    margin:0px;
+    padding:0px;   
+}
+
+form#editor label, form#editor input[type='text']{
+    display:block;
+}
+
+form#editor #editor-buttons{
+    border:none;
+    text-align:right;
+}
+
+form#editor textarea, form#editor input[type='text']{
+    width:90%;
+    margin-bottom:2em;
+}
+
+form#editor textarea{
+    height:10em;
+}
+
+/*styles for comment form*/
+form#comment-form{
+    margin-top:2em;
+    padding-top: 0.7em;
+    border-top:1px solid grey;
+}
+
+form#comment-form label, form#comment-form input[type='submit']{
+    padding-top:0.7em;
+    display:block;
+} 
+Creating a Comment Table in the Database 
+Before you can begin working with comments, you need to have a place to store them. Create a table 
