@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Menu </title>
+    <link rel="stylesheet" type="text/css" href="css_menu_horizontal.css">
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-family: Verdana, sans-serif;
+        font-size: 12px;
+      }
+    </style>    
+  </head>
+  <body>
+
+  
+  
+    <nav>
+      <ul class="menu">
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/file.svg" class="svg_icon menu_item_icon"/>File</a>
+          <div class="sub_menu_container">
+            <ul class="sub_menu">
+              <li class="sub_menu_item"><a href="#" class="menu_link">New File</a></li>
+              <li class="sub_menu_item"><a href="#" class="menu_link">Open File...</a></li>
+              <li class="sub_menu_item menu_group_seperator"><a href="#" class="menu_link">New File</a></li>
+              <li class="sub_menu_item"><a href="#" class="menu_link">Save</a></li>
+              <li class="sub_menu_item"><a href="#" class="menu_link">Save As...</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/edit.svg" class="svg_icon menu_item_icon"/>Edit</a>
+          <div class="sub_menu_container">
+            <ul class="sub_menu">
+              <li class="sub_menu_item"><a href="#" class="menu_link">Copy</a></li>
+              <li class="sub_menu_item menu_group_seperator"><a href="#" class="menu_link">Paste</a></li>
+              <li class="sub_menu_item"><a href="#" class="menu_link">Undo</a></li>
+              <li class="sub_menu_item"><a href="#" class="menu_link">Redo</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/view.svg" class="svg_icon menu_item_icon"/>View</a></li>
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/find.svg" class="svg_icon menu_item_icon"/>Find</a></li>
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/setting.svg" class="svg_icon menu_item_icon"/> Setting</a></li>
+        <li class="menu_item"><a href="#" class="menu_link"><img target_svg="../../icons/help.svg" class="svg_icon menu_item_icon"/>Help</a></li>
+      </ul>
+    </nav>
+    
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="css_menu.js"></script>
+    <script type="text/javascript">      
+      $.ajaxSetup({
+          cache: true
+      });
+      $( document ).ready(update_svg_as_inline);
+    </script>
+  </body>
+</html>
