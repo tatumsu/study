@@ -9,24 +9,44 @@
       margin-bottom: 30px;
       margin: 10px auto;
 
-
-
       width: 400px;
       height: 200px;
-      background-color: green;
-      border: 20px solid transparent;
-      padding: 20px;    
-      border-image: url("../../images/border.png");
-      border-image-slice: 27 27;
-      border-image-width: 40px;
-      border-image-repeat:  stretch;
+      background-color: lightgrey;
+      border: 2px solid black;
       
     }
+
+   a {
+    color: #FF4F72;
+    transition: 0.15s;
+    text-decoration: none;
+    position: relative;
+    display: inline-block
+    }
+
+    a::before {
+        content: '';
+        transition: inherit;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0px;
+        height: 1px;
+        background: currentcolor;
+
+    }
+
+    a:active::before, a:hover::before {
+
+ 
+    }
+
   </style>
 </head>
 <body>
 
   <div>
+    <a href="">CSS3 Patterns Gallery</a>
     
   </div>
 </body>
