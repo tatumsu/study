@@ -5,9 +5,6 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<!-- pre tag to contain the highlighted code -->
-<pre id="layer"></pre>
-
 <!-- textarea to contain the raw sql -->
 <textarea id="highlight" name="highlight">
 #This is a mysql syntax highlighter
@@ -40,6 +37,9 @@ LEFT JOIN time_frequencies tf ON d.payment_frequency_id = tf.id
 WHERE d.status = 'active'
 ORDER BY due_date
 </textarea>
+<input type="button" value="Run" onclick="run()"></input>
+<!-- pre tag to contain the highlighted code -->
+<pre id="layer"></pre>
 
 <!-- jquery -->
 <script src="http://thecodeplayer.com/uploads/js/jquery-1.7.1.min.js" type="text/javascript"></script>

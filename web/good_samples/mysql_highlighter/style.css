@@ -1,7 +1,22 @@
 * {margin: 0; padding: 0;}
+
 body {padding: 30px;}
 
-#highlight {display: none;}
+#highlight {
+	margin: 0 0 10px 0;
+	display: block;
+	height: 200px;
+	width: 100%;
+}
+
+input {
+	height: 30px;
+	width: 100px;
+	text-align: center;
+	background-color: #4CAF50;
+	color: white;
+	margin-bottom: 10px;
+}
 
 /*styles for the pre tag*/
 #layer {

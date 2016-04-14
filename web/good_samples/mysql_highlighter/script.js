@@ -1,4 +1,8 @@
 $(document).ready(function(){
+	run();
+})
+
+function run() {
 	//full list of reserved words: http://dev.mysql.com/doc/refman/5.0/en/reserved-words.html
 	var k = ["AND", "AS", "ASC", "BETWEEN", "BY", "CASE", "CURRENT_DATE", "CURRENT_TIME", "DELETE", "DESC", "DISTINCT", "EACH", "ELSE", "ELSEIF", "FALSE", "FOR", "FROM", "GROUP", "HAVING", "IF", "IN", "INSERT", "INTERVAL", "INTO", "IS", "JOIN", "KEY", "KEYS", "LEFT", "LIKE", "LIMIT", "MATCH", "NOT", "NULL", "ON", "OPTION", "OR", "ORDER", "OUT", "OUTER", "REPLACE", "RIGHT", "SELECT", "SET", "TABLE", "THEN", "TO", "TRUE", "UPDATE", "VALUES", "WHEN", "WHERE"];
 	//adding lowercase keyword support
@@ -63,4 +67,4 @@ $(document).ready(function(){
 		match = match.replace(/<\/span>/g, "");
 		return "<span class=\"comment\">"+match+"</span>";
 	}
-})
+}
