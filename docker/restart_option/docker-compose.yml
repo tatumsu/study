@@ -1,0 +1,14 @@
+version: "2.0"
+
+services:
+  python-http-server:
+    image: python:2.7
+    container_name: python-http-server
+    hostname: python_http_server
+    network_mode: host
+    volumes: 
+      - .:/tmp/server
+    restart: always
+    #restart: on-failure:3
+    #restart: unless-stopped
+    entrypoint: python /tmp/server/TatumServer.py

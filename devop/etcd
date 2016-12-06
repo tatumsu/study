@@ -1,0 +1,19 @@
+etcd
+-------------Clustering-----------------
+1. Node discovery
+	Static
+	etcd Discovery
+	DNS Discovery
+
+2. Runtime configuration
+
+
+
+
+
+listen-client-urls
+listen-peer-urls
+advertise-client-urls
+
+initial-advertise-peer-urls  
+initial-cluster-token 
