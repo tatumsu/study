@@ -1,6 +1,6 @@
-ab -n 100 -c 5 http://t2.yit.com/mobile/home/fcategory   
-ab -n 100 -c 5 http://test.yit.com/mobile/home/fcategory   
+ab -n 100 -c 5 http://h5.tatum.com/mobile/home/fcategory   
+ab -n 100 -c 5 http://h5.tatum.com/mobile/home/fcategory   
 
 
-ab -n 50 -c 1 http://t2.yit.com/mobile/home/fcategory
-ab -n 100 -c 1 http://t2.yit.com/mobile/home/fcategory
+ab -n 50 -c 1 http://h5.tatum.com/mobile/home/fcategory
+ab -n 100 -c 1 http://h5.tatum.com/mobile/home/fcategory
