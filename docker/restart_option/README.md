@@ -1,5 +1,5 @@
 # Test how docker works with restart option
-# Steps:
+## Steps:
 1. Start the container
 2. Open a console, ane watch status with: 'watch docker ps -a'
 3. On the host, input following script to test with 
